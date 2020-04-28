@@ -19,4 +19,3 @@ After build, create a new container
     docker stop my-app && docker rm $_ && docker run -d --name $_ -p 8000:80 my-php-mysql
     
 Access [http://localhost:8000/](http://localhost:8000/)
-
