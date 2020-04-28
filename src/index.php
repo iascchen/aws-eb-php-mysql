@@ -26,7 +26,7 @@
    echo '</p>';
 
    // Create connection
-   $conn = new mysqli($DB_HOST, $DB_USER, $RDS_PASSWORD);
+   $conn = new mysqli_connect($DB_HOST, $DB_USER, $RDS_PASSWORD, $DB_NAME);
 
    // Check connection
    if ($conn->connect_error) {
