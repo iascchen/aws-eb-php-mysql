@@ -19,3 +19,13 @@ After build, create a new container
     docker stop my-app && docker rm $_ && docker run -d --name $_ -p 8000:80 my-php-mysql
     
 Access [http://localhost:8000/](http://localhost:8000/)
+
+## Some Tips
+
+1. Zip this folder, and deploy to Elastic Beanstalk.
+    
+        zip -r '../aws-eb-php-mysql.zip' *
+    
+2. Enable PHP other Module, please add this sentence in Dockerfile :
+
+        RUN docker-php-ext-install mysqli

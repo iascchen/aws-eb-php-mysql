@@ -15,26 +15,25 @@
    define('DB_HOST', getenv('RDS_HOSTNAME'));
    define('DB_PORT', getenv('RDS_PORT'));
    define('DB_USER', getenv('RDS_USERNAME'));
-   define('RDS_PASSWORD', getenv('RDS_PASSWORD'));
+   define('DB_PASSWORD', getenv('RDS_PASSWORD'));
    define('DB_NAME', getenv('RDS_DB_NAME'));
 
    echo '<p>';
    echo DB_HOST; echo ' , ';
    echo DB_PORT; echo ' , ';
    echo DB_USER; echo ' , ';
-   echo DB_NAME;
+   echo DB_NAME; echo ' , ';
    echo '</p>';
 
    // Create connection
-   $conn = new mysql_connect($DB_HOST, $DB_USER, $RDS_PASSWORD, $DB_NAME);
+   $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD);
 
    // Check connection
    if ($conn->connect_error) {
-       die("Connection failed: " . $conn->connect_error);
+       die("<p>Connection failed: " . $conn->connect_error . "</p>");
    }
-   echo "Connected successfully";
+   echo "<p>Connected successfully</p>";
    ?>
-  ?>
  <hr/>
   <?php phpinfo(); ?>
  </body>
